@@ -1,0 +1,71 @@
+﻿@model IEnumerable<blogPostTest.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrLogin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrPassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrFirstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrLastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrMobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrRegisterDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsrProf)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrLogin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrFirstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrLastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrRegisterDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsrProf.ProfId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UsrId" class="btn btn-info">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.UsrId" class="btn btn-warning">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.UsrId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

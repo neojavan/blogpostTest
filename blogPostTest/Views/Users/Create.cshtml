@@ -1,0 +1,62 @@
+﻿@model blogPostTest.Models.User
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UsrLogin" class="control-label"></label>
+                <input asp-for="UsrLogin" class="form-control" />
+                <span asp-validation-for="UsrLogin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsrPassword" class="control-label"></label>
+                <input asp-for="UsrPassword" class="form-control" />
+                <span asp-validation-for="UsrPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsrFirstname" class="control-label"></label>
+                <input asp-for="UsrFirstname" class="form-control" />
+                <span asp-validation-for="UsrFirstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsrLastname" class="control-label"></label>
+                <input asp-for="UsrLastname" class="form-control" />
+                <span asp-validation-for="UsrLastname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsrMobile" class="control-label"></label>
+                <input asp-for="UsrMobile" class="form-control" />
+                <span asp-validation-for="UsrMobile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsrRegisterDate" class="control-label"></label>
+                <input asp-for="UsrRegisterDate" class="form-control" />
+                <span asp-validation-for="UsrRegisterDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UsrProfId" class="control-label"></label>
+                <select asp-for="UsrProfId" class ="form-control" asp-items="ViewBag.UsrProfId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
